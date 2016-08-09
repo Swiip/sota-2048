@@ -2,10 +2,8 @@ import React, {Component, PropTypes} from 'react';
 
 export class TileView extends Component {
   render() {
-    return (
-      <span className={this.props.tile.classes.join(' ')}
-        key={this.props.tile.id}>{this.props.tile.value}</span>
-    );
+    const {tile} = this.props;
+    return <span id={`tile-${tile.id}`} className={tile.classes.join(' ')}>{tile.value}</span>;
   }
 }
 

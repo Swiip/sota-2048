@@ -1,3 +1,8 @@
+:root {
+  --translation-duration: .2s;
+  --animation-duration: .2s;
+}
+
 html, body, #root {
   margin: 0;
   height: 100%;
@@ -15,4 +20,115 @@ a {
 
 a:hover {
   color: #155050;
+}
+
+.tile.tile-0 {
+  background-color: #dcb;
+}
+
+.tile.tile-2 {
+  background-color: #eee;
+}
+
+.tile.tile-4 {
+  background-color: #eec;
+}
+
+.tile.tile-8 {
+  color: #ffe;
+  background-color: #fb8;
+}
+
+.tile.tile-16 {
+  color: #ffe;
+  background-color: #f96;
+}
+
+.tile.tile-32 {
+  color: #ffe;
+  background-color: #f75;
+}
+
+.tile.tile-64 {
+  color: #ffe;
+  background-color: #f53;
+}
+
+.tile.tile-128 {
+  color: #ffe;
+  background-color: #ec7;
+  font-size: 45px;
+}
+
+.tile.tile-256 {
+  color: #ffe;
+  background-color: #ec6;
+  font-size: 45px;
+}
+
+.tile.tile-512 {
+  color: #ffe;
+  background-color: #ec5;
+  font-size: 45px;
+}
+
+.tile.tile-1024 {
+  color: #fff;
+  background-color: #ec3;
+  font-size: 35px;
+}
+
+.tile.tile-2048 {
+  color: #fff;
+  background-color: #ec2;
+  font-size: 35px;
+}
+
+.row-0 { top: calc(110px * 0 + 5px); }
+.row-1 { top: calc(110px * 1 + 5px); }
+.row-2 { top: calc(110px * 2 + 5px); }
+.row-3 { top: calc(110px * 3 + 5px); }
+
+.col-0 { left: calc(110px * 0 + 5px); }
+.col-1 { left: calc(110px * 1 + 5px); }
+.col-2 { left: calc(110px * 2 + 5px); }
+.col-3 { left: calc(110px * 3 + 5px); }
+
+.tile {
+  position: absolute;
+  transition: top var(--translation-duration), left var(--translation-duration);
+}
+
+.tile.new {
+  animation: appear var(--animation-duration) ease;
+}
+
+.tile.merged {
+  animation: pop var(--animation-duration) ease;
+}
+
+@keyframes appear {
+  0% {
+    /*opacity: 0;*/
+    transform: scale(0);
+  }
+
+  100% {
+    /*opacity: 1;*/
+    transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

@@ -8,27 +8,9 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   module: {
     loaders: [
-      {
-        test: /.json$/,
-        loaders: [
-          'json'
-        ]
-      },
-      {
-        test: /\.css$/,
-        loaders: [
-          'style',
-          'css',
-          'postcss'
-        ]
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [
-          'babel'
-        ]
-      }
+      {test: /.json$/, loaders: ['json']},
+      {test: /\.css$/, loaders: ['style', 'css']},
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']}
     ]
   },
   plugins: [
@@ -39,8 +21,8 @@ module.exports = {
       inject: true
     }),
     new webpack.optimize.UglifyJsPlugin({
-        compress: { unused: true, dead_code: true }
-      })
+      compress: {unused: true, dead_code: true} // eslint-disable-line camelcase
+    })
   ],
   postcss: () => [autoprefixer],
   output: {

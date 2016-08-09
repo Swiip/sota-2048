@@ -31,16 +31,23 @@ function moveLeft(board) {
     return _.range(size).map(target => {
       let targetTile;
       if (currentRow.length > 0) {
-        targetTile = {...currentRow.shift()};
+        targetTile = {
+          ...currentRow.shift(),
+          merged: null
+        };
       } else {
         targetTile = createTile();
       }
       if (currentRow.length > 0 && currentRow[0].value === targetTile.value) {
         const tile1 = targetTile;
+        tile1.merged = null;
         targetTile = createTile(targetTile.value);
         targetTile.merged = [];
         targetTile.merged.push(tile1);
-        const tile2 = {...currentRow.shift()};
+        const tile2 = {
+          ...currentRow.shift(),
+          merged: null
+        };
         targetTile.value += tile2.value;
         targetTile.merged.push(tile2);
       }

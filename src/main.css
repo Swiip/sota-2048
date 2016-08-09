@@ -52,7 +52,7 @@ body {
   background-color: #dcb;
 }
 
-.tile0 {
+/*.tile0 {
   background-color: #dcb;
 }
 
@@ -112,29 +112,29 @@ body {
   color: #fff;
   background-color: #ec2;
   font-size: 35px;
-}
+}*/
 
-.tile {
+/*.tile {
   position: absolute;
-}
+}*/
 
-.tile.merged {
+/*.tile.merged {
   display: none;
 }
 
 .tile.merged.isMoving {
   display: inline;
-}
+}*/
 
-.tile.new, .overlay {
+/*.tile.new, .overlay {
   animation-duration: 0.20s;
   animation-name: newTile;
   animation-fill-mode: forwards;
   animation-delay: 0.15s;
   transform: scale(0);
-}
+}*/
 
-@keyframes newTile {
+/*@keyframes newTile {
   from {
     transform: scale(0);
   }
@@ -142,7 +142,7 @@ body {
   to {
     transform: scale(1);
   }
-}
+}*/
 
 .overlay {
   position: absolute;

@@ -37,16 +37,19 @@ export class BoardView extends Component {
       <div className="board" tabIndex="1">
         {this.props.board.map((row, i) => (
           <div key={i}>
-            {row.map((row, i) => (
-              <Cell key={i}/>
-            ))}
+            {row.map((row, i) => <Cell key={i}/>)}
           </div>
         ))}
-        {tiles.map((tile, i) => (
-          <TileView key={i} tile={tile} />
-        ))}
-        <GameEndOverlay won={this.props.won} lost={this.props.lost} beyond={this.props.beyond}
-          onRestart={this.props.start} onContinue={this.props.continue}/>
+
+        {tiles.map(tile => <TileView key={tile.id} tile={tile}/>)}
+
+        <GameEndOverlay
+          won={this.props.won}
+          lost={this.props.lost}
+          beyond={this.props.beyond}
+          onRestart={this.props.start}
+          onContinue={this.props.continue}
+          />
       </div>
     );
   }
@@ -59,5 +62,6 @@ BoardView.propTypes = {
   beyond: PropTypes.bool.isRequired,
   move: PropTypes.func.isRequired,
   start: PropTypes.func.isRequired,
-  continue: PropTypes.func.isRequired
+  continue: PropTypes.func.isRequired,
+  undo: PropTypes.func.isRequired
 };

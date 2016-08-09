@@ -35,7 +35,7 @@ export function board(state = getInitialState(), action) {
       return {
         ...state,
         board: updateUndo(state.board, action.oldBoard)
-      }
+      };
     }
     default: {
       return state;
