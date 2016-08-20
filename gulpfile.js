@@ -8,9 +8,9 @@ const conf = require('./conf/gulp.conf');
 
 // Load some files into the registry
 const hub = new HubRegistry([
-  'gulp_tasks/misc.js',
-  'gulp_tasks/browsersync.js',
-  'gulp_tasks/webpack.js'
+	'gulp_tasks/misc.js',
+	'gulp_tasks/browsersync.js',
+	'gulp_tasks/webpack.js'
 ]);
 
 // Tell gulp to use the tasks just loaded
@@ -25,6 +25,6 @@ gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
 
 function watch(done) {
-  gulp.watch(path.join(conf.paths.tmp, 'index.html'), browserSync.reload);
-  done();
+	gulp.watch(path.join(conf.paths.tmp, 'index.html'), browserSync.reload);
+	done();
 }
